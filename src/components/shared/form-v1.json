@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_form_v1s",
+  "info": {
+    "displayName": "FormV1",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

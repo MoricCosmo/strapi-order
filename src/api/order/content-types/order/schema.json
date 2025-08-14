@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "email": {
+      "type": "email",
+      "private": true,
+      "required": true
+    },
+    "telephone": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "regex": "[0-9]{5,15}"
+    },
+    "sel": {
+      "type": "string",
+      "required": true
+    },
+    "size": {
+      "type": "string",
+      "required": true
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true
+    },
+    "tempatPengambilan": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "DG East",
+        "DG Central",
+        "DG West"
+      ]
+    }
+  }
+}

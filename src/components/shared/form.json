@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_shared_forms",
+  "info": {
+    "displayName": "Form",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "calledName": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Laki-Laki",
+        "Wanita"
+      ]
+    },
+    "age": {
+      "type": "integer"
+    },
+    "dateOfBirth": {
+      "type": "date"
+    },
+    "email": {
+      "type": "email"
+    },
+    "bersediaOutbound": {
+      "type": "boolean"
+    },
+    "buktiPembayaran": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
