@@ -1,61 +1,114 @@
-# 🚀 Getting started with Strapi
+# YSF Merchandise Ordering
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+An early full-stack university project built with **Next.js, React, and Strapi** for collecting merchandise orders through a simple web interface.
 
-### `develop`
+> **Archive note:** Built around my early university semesters as a learning project for frontend-to-REST-API integration, form handling, and persistent order data.
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+## Overview
 
-```
-npm run develop
-# or
-yarn develop
-```
+The system is split into two repositories:
 
-### `start`
-
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
-npm run start
-# or
-yarn start
+```text
+Next.js Frontend
+      ↓
+ Strapi REST API
+      ↓
+   Database
 ```
 
-### `build`
+The frontend collects merchandise-order information and communicates with Strapi through HTTP requests.
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+## Features
 
+- Merchandise order form
+- Customer name, email, and telephone
+- Group / `sel` selection
+- Shirt size selection
+- Quantity input
+- Pickup-location selection
+- Submit orders through the Strapi REST API
+- Retrieve stored orders
+- Paginated order list
+- Loading and error states
+- Responsive UI
+
+## Architecture
+
+```mermaid
+flowchart LR
+    User["User"]
+    Next["Next.js + React"]
+    API["Strapi REST API"]
+    DB[("Database")]
+
+    User --> Next
+    Next -->|"HTTP / Axios"| API
+    API --> DB
 ```
-npm run build
-# or
-yarn build
+
+## Order Data
+
+The Strapi `Order` collection stores fields such as:
+
+```text
+fullName
+email
+telephone
+sel
+size
+quantity
+tempatPengambilan
 ```
 
-## ⚙️ Deployment
+The backend schema also includes validation for required fields, email format, telephone values, and allowed pickup locations.
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+## Tech Stack
 
-```
-yarn strapi deploy
-```
+### Frontend
 
-## 📚 Learn more
+- Next.js 15
+- React 19
+- TypeScript
+- Axios
+- Tailwind CSS
+- Radix UI / shadcn-style components
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+### Backend
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+- Strapi 5
+- REST API
+- Database persistence
 
-## ✨ Community
+## What I Learned
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+This project was an early introduction to:
 
----
+- connecting a React/Next.js frontend to an external backend;
+- consuming REST APIs with Axios;
+- submitting form data through HTTP;
+- retrieving and paginating persisted records;
+- using a headless CMS as an application backend;
+- separating frontend and backend responsibilities.
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+It became an early step toward the more custom backend and infrastructure work I built in later projects.
+
+## Limitations
+
+This is an archived learning project.
+
+The current implementation includes several prototype-level choices, including:
+
+- hard-coded local API URLs;
+- unfinished authentication UI;
+- some debugging output in the interface;
+- minimal custom backend business logic beyond the Strapi data model.
+
+## Status
+
+**Archived / early university project**
+
+Preserved as part of my progression from simple frontend/backend integration toward larger full-stack and systems projects.
+
+## Author
+
+Built by [MoricCosmo](https://github.com/MoricCosmo).
